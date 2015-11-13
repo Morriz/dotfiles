@@ -4,20 +4,20 @@ alias _="sudo"
 
 # aliases to manage aliases, env, and reload these
 
-alias _bp="$EDITOR ~/.bash_profile"
+alias _bp="vi ~/.bash_profile"
 alias _rbp=". ~/.bash_profile"
-alias _zr="$EDITOR ~/.zshrc"
+alias _zr="vi ~/.zshrc"
 alias _rzr=". ~/.zshrc"
-alias _e="$EDITOR $DOTFILES_DIR/system/.env"
+alias _e="vi $DOTFILES_DIR/system/.env"
 alias _re=". $DOTFILES_DIR/system/.env"
-alias _a="$EDITOR $DOTFILES_DIR/system/.alias"
+alias _a="vi $DOTFILES_DIR/system/.alias"
 alias _ra=". $DOTFILES_DIR/system/.alias"
-alias _c="$EDITOR $DOTFILES_DIR/system/.custom"
+alias _c="vi $DOTFILES_DIR/system/.custom"
 alias _rc=". $DOTFILES_DIR/system/.custom"
 
 # edit hosts file
 
-alias vih="sudo $EDITOR /etc/hosts"
+alias vih="sudo vi /etc/hosts"
 
 # grep in history
 
