@@ -13,6 +13,7 @@ sub_help () {
     echo "   test               Run tests"
     echo "   update             Update packages and pkg managers (OS, brew, gem, pip)"
     echo "   osx                Apply OS X system defaults"
+    echo "   solarized          Add Solarized schemes to OSX"
     echo "   dock               Apply OS X Dock settings"
     echo "   install mjolnir    Install Mjolnir (Homebrew/Luarocks)"
 }
