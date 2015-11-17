@@ -40,6 +40,7 @@ apps=(
     peco
     psgrep
     python
+    ruby
     shellcheck
     ssh-copy-id
     #svn
