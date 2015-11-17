@@ -44,6 +44,12 @@ sub_osx () {
     echo "Done. Some changes may require a logout/restart to take effect."
 }
 
+sub_solarized () {
+    # install color schemes
+    open $DOTFILES_DIR/install/schemes/SolarizedDark.terminal
+    open $DOTFILES_DIR/install/schemes/SolarizedLight.terminal
+}
+
 sub_dock () {
     . "$DOTFILES_DIR/osx/dock.sh" && echo "Dock reloaded."
 }
