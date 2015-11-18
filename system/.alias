@@ -95,8 +95,9 @@ alias nun="npm uninstall"
 alias nup="npm update"
 alias nr="npm reload"
 
-# vagrant
+alias nvm-switched="ln -sf `which node` /usr/local/bin/node"
 
+# vagrant
 alias v="vagrant status"
 alias vu="vagrant up"
 alias vs="vagrant ssh"

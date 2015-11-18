@@ -28,6 +28,7 @@ apps=(
     shortcat
     slack
     sourcetree
+    spectacle
     spotify
     transmit
     vagrant
