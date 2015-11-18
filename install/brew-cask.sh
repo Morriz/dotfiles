@@ -21,6 +21,7 @@ apps=(
     google-chrome-canary
     google-drive
     kaleidoscope
+    keycue
     macdown
     opera
     screenflow

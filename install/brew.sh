@@ -23,6 +23,8 @@ apps=(
     dockutil
     ffmpeg
     fasd
+    # git without completions to allow zsh completion through hub
+    git --without-completions
     gifsicle
     #gitsh
     git-extras
