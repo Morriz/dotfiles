@@ -1,8 +1,10 @@
-source $DOTFILES_DIR/runcom/.common.sh
+export DOTFILES_DIR=~/.dotfiles
+source "$DOTFILES_DIR/runcom/.common"
 
 # Set LSCOLORS
-
-eval "$(dircolors "$DOTFILES_DIR"/system/.dir_colors)"
+if `which dircolors` >/dev/null; then
+    dircolors "$DOTFILES_DIR/system/.dir_colors"
+fi
 
 # Case-insensitive globbing (used in pathname expansion)
 
