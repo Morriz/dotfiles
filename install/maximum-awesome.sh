@@ -1,4 +1,4 @@
-INSTALL_DIR=$DOTFILES_DIR/maximimum-awesome
+INSTALL_DIR=$DOTFILES_DIR/maximum-awesome
 
 # Install/update
 mkdir -p "$INSTALL_DIR" && git clone https://github.com/square/maximum-awesome.git "$INSTALL_DIR"
