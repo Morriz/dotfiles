@@ -25,7 +25,7 @@ ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 . "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/bash.sh"
 . "$DOTFILES_DIR/install/zsh.sh"
-. "$DOTFILES_DIR/install/maximum-awesome.sh"
+#. "$DOTFILES_DIR/install/maximum-awesome.sh"
 . "$DOTFILES_DIR/install/node.sh"
 
 if [ "$(uname)" == "Darwin" ]; then
