@@ -4,7 +4,7 @@
 
 export DOTFILES_DIR EXTRA_DIR
 INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES_DIR=~/.dotfiles
+DOTFILES_DIR=$HOME/.dotfiles
 ln -sf $INSTALL_DIR $DOTFILES_DIR
 EXTRA_DIR="$HOME/.extra"
 

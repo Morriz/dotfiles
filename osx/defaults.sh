@@ -343,7 +343,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-apps -array
 
 # Don’t animate opening applications from the Dock
 #defaults write com.apple.dock launchanim -bool false
@@ -419,11 +419,11 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Set Safari’s home page to `about:blank` for faster loading
 #defaults write com.apple.Safari HomePage -string "about:blank"
 
-# Prevent Safari from opening ‘safe’ files automatically after downloading
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# Allow/Prevent Safari from opening ‘safe’ files automatically after downloading
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool true
 
-# Allow hitting the Backspace key to go to the previous page in history
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
+# (Dis)Allow hitting the Backspace key to go to the previous page in history
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool false
 
 # Hide Safari’s bookmarks bar by default
 defaults write com.apple.Safari ShowFavoritesBar -bool false
@@ -515,9 +515,10 @@ sudo mdutil -E / > /dev/null
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Use a modified version of the Pro theme by default in Terminal.app
-#open "${HOME}/init/Mathias.terminal"
-#sleep 1 # Wait a bit to make sure the theme is loaded
+# Use Solarized theme by default in Terminal.app
+# open "${DOTFILES_DIR}/install/schemes/SolarizedLight.terminal"
+# open "${DOTFILES_DIR}/install/schemes/SolarizedDark.terminal"
+# sleep 1 # Wait a bit to make sure the themes are loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Solarized Light"
 defaults write com.apple.terminal "Startup Window Settings" -string "Solarized Light"
 
@@ -551,9 +552,6 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 # Enable Dashboard dev mode (allows keeping widgets on the desktop)
 #defaults write com.apple.dashboard devmode -bool true
-
-# Enable the debug menu in iCal (pre-10.8)
-#defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -614,19 +612,12 @@ defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://
 defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
-# Sublime Text                                                                #
-###############################################################################
-
-# Install Sublime Text settings
-#cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
-
-###############################################################################
 # Transmission.app                                                            #
 ###############################################################################
 
-# Use `~/Documents/Torrents` to store incomplete downloads
-#defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-#defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
+# Use `~/Downloads/Torrents/temp` to store incomplete downloads
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Torrents/temp"
 
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false

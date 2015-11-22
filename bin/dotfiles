@@ -15,7 +15,9 @@ sub_help () {
     echo "   osx                Apply OS X system defaults"
     echo "   solarized          Add Solarized schemes to OSX"
     echo "   dock               Apply OS X Dock settings"
-    echo "   install mjolnir    Install Mjolnir (Homebrew/Luarocks)"
+    echo "   install (mjolnir|maximum-awesome)"
+    echo "          - mjolnir: see Mjolnir (Homebrew/Luarocks)"
+    echo "          - maximum-awesome: see Maximum Awesome"
 }
 
 sub_edit () {

@@ -8,7 +8,7 @@ dockutil --no-restart --add "/Applications/Mail.app"
 dockutil --no-restart --add "/Applications/Calendar.app"
 dockutil --no-restart --add "/Applications/Utilities/Terminal.app"
 dockutil --no-restart --add "/Applications/System Preferences.app"
-#dockutil --no-restart --add "/Applications/Utilities/Console.app"
+dockutil --no-restart --add "/Applications/Utilities/Console.app"
 dockutil --no-restart --add "/Applications/Spotify.app"
 dockutil --no-restart --add "/Applications/iTunes.app"
 
