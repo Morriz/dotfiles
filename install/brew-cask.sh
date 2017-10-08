@@ -14,7 +14,6 @@ apps=(
     dropbox
     firefox
     firefox-nightly
-    flux
     # glimmerblocker
     github-desktop
     google-chrome
