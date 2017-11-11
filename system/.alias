@@ -2,6 +2,9 @@
 
 alias _="sudo"
 
+# watch will work with aliases if it's aliased itself:
+alias watch='watch '
+
 # aliases to manage aliases, env, and reload these
 
 alias _bp="$EDITOR ~/.bash_profile"
@@ -177,12 +180,18 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 # kubernetes
 alias k="kubectl"
-alias ks="kubevtl -n system"
+alias km="kubectl -n monitoring"
+alias ks="kubectl -n kube-system"
+alias ki="kubectl -n istio-system"
 alias ka="kubectl --all-namespaces=true"
-alias ks="kubectl --namespace=kube-system"
+alias kaa="ka get all"
+alias kap="ka get po"
+alias kdel="k delete"
 alias kcv="kubectl config view"
 alias kcg="kubectl config view | grep 'current-context:' | sed -n -e 's/^.*current-context: //p'"
 alias kcu="kubectl config use-context"
 alias kp="kubectl proxy &"
 alias kk="killall kubectl"
 alias kd="k -n drone"
+alias kdev="k -n dev"
+alias kprod="k -n prod"
