@@ -21,7 +21,7 @@ It targets OS X systems, but since it has some defensive checks it should work o
 * OS X specific: [dockutil](https://github.com/kcrawford/dockutil), [Mjolnir](https://github.com/sdegutis/mjolnir), [Mackup](https://github.com/lra/mackup), [Quick Look plugins](https://github.com/sindresorhus/quick-look-plugins)
 * OS X apps (via brew cask, symlinked into /Applications):
     * Alfred (I have workflows for the paid version listed [here](https://www.dropbox.com/home/Public/Mac%20OSX/Alfred%20Workflows))
-    * Atom (will install the [listed packages](install/atom-packages.txt))
+    * VSCode (will install the [listed extensions](install/vscode-extensions.txt))
     * ... and many others, see [list here](install/brew-cask.sh)
 * Aliases: please try `listaliases` after install to see all the aliases, or just enter `_a` to open the shared system/.alias file and see what they all point to ;)
 

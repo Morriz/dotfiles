@@ -33,7 +33,7 @@ apps=(
     vagrant
     virtualbox
     vlc
-    webstorm
+    visual-studio-code
 )
 
 brew cask install "${apps[@]}"

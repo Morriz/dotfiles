@@ -21,34 +21,34 @@ apps=(
     bats
     coreutils
     dockutil
-    ffmpeg
+    # ffmpeg
     fasd
     # git without completions to allow zsh completion through hub
     git --without-completions
-    gifsicle
-    #gitsh
+    # gifsicle
+    # gitsh
     git-extras
     git-flow
     gnu-sed --with-default-names
     grep --with-default-names
-    heroku-toolbelt
+    # heroku-toolbelt
     hub
+    python
     httpie
-    imagemagick
+    # imagemagick
     jq
     legit
     mackup
-    otto
+    ngrok
     peco
     psgrep
-    python
     ruby
     shellcheck
     ssh-copy-id
     #svn
     tree
     vim
-    wget
+    # wget
 )
 
 brew install "${apps[@]}"

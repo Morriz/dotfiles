@@ -34,8 +34,6 @@ if [ "$(uname)" == "Darwin" ]; then
     ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" ~
 fi
 
-. "$DOTFILES_DIR/install/atom.sh"
-
 # Run tests
 
 bats test/*.bats

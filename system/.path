@@ -15,6 +15,11 @@ prepend-path "/sbin"
 prepend-path "/usr/sbin"
 prepend-path "/usr/local/sbin"
 prepend-path "$HOME/.rvm/bin"
+prepend-path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+prepend-path "$ANDROID_SDK_ROOT/platform-tools"
+prepend-path "$ANDROID_SDK_ROOT/tools"
+prepend-path "$ANDROID_SDK_ROOT/emulator"
+prepend-path "$HOME/.fastlane/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755

@@ -38,6 +38,7 @@ alias "g?"="git status"
 alias "g+"="git add"
 alias "g-"="git rm"
 alias "g!"="git commit -am"
+alias "gf!"="git commit --no-verify -am"
 alias "g%"="git sync"
 alias gp="git pull"
 alias gps="git push"
@@ -133,6 +134,10 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 # Docker alias and function
 # ------------------------------------
 
+alias d="docker"
+alias dc="docker-compose"
+alias ds="docker service"
+
 # Get latest container ID
 alias dl="docker ps -l -q"
 
@@ -166,11 +171,13 @@ drm() { docker rm $(docker ps -a -q); }
 # Stop and Remove all containers
 alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
-# Remove all images
-dri() { docker rmi $(docker images -q); }
+driu() { docker rmi $(docker images | grep "^<none>" | awk "{print $3}") }
 
-# Dockerfile build, e.g., $dbu tcnksm/test
-dbu() { docker build -t=$1 .; }
+# Remove all images
+dria() { docker rmi $(docker images -q); }
+
+# Dockerfile build, e.g., dbu tcnksm/test
+dbu() { docker build -t=$1 . }
 
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
@@ -179,19 +186,20 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 # kubernetes
-alias k="kubectl"
-alias km="kubectl -n monitoring"
-alias ks="kubectl -n kube-system"
-alias ki="kubectl -n istio-system"
-alias ka="kubectl --all-namespaces=true"
-alias kaa="ka get all"
-alias kap="ka get po"
-alias kdel="k delete"
-alias kcv="kubectl config view"
-alias kcg="kubectl config view | grep 'current-context:' | sed -n -e 's/^.*current-context: //p'"
-alias kcu="kubectl config use-context"
-alias kp="kubectl proxy &"
-alias kk="killall kubectl"
-alias kd="k -n drone"
-alias kdev="k -n dev"
-alias kprod="k -n prod"
+# alias k="kubectl"
+# alias ksk="k -n kube-system"
+# alias ka="k --all-namespaces=true"
+# alias kaa="ka get all"
+# alias kap="ka get po"
+# alias kdel="k delete"
+# alias kcv="k config view"
+# alias kce="code ~/.kube/config"
+# alias kcg="k config view | grep 'current-context:' | sed -n -e 's/^.*current-context: //p'"
+# alias kcu="k config use-context"
+# alias kp="k proxy &"
+# # alias h="helm"
+# alias hi="h upgrade --install"
+# alias hk="h delete --purge"
+# alias kk="killall kubectl"
+# alias mkk="killall ngrok; kk; killall fswatch; sudo killall ssh"
+# alias mkd="mkk; minikube delete"

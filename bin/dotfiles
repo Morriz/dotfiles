@@ -22,7 +22,7 @@ sub_help () {
 
 sub_edit () {
     sh -c "$EDITOR $DOTFILES_DIR"
-    sh -c "$GIT_GUI $DOTFILES_DIR"
+    #sh -c "$GIT_GUI $DOTFILES_DIR"
 }
 
 sub_test () {

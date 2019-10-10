@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PATH=/usr/local/bin:$PATH
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -41,14 +42,23 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# KUBE_PS1_PREFIX='['
+# KUBE_PS1_SUFFIX=']'
+# KUBE_PS1_SYMBOL_ENABLE=false
+# KUBE_PS1_DIVIDER=
+# KUBE_PS1_NS_ENABLE=false
+
+# ZSH_TMUX_AUTOSTART=true
+# ZSH_TMUX_ITERM2=true
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(atom bower brew brew-cask bundler colored-man colorize
-  command-aliases dirhistory docker gem git git-extras git-flow github go golang heroku
-  last-working-dir node npm nvm osx postgres python rails rake rbenv redis-cli ruby
-  sbt sudo terminalapp vagrant xcode zsh-syntax-highlighting)
+plugins=(brew bundler colorize
+  dirhistory docker git git-extras git-flow github golang heroku
+  kops kubectl kube-ps1 last-working-dir npm nvm osx python
+  rails rbenv ruby sbt tmux vagrant xcode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,3 +96,10 @@ LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
 if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
     . $LUNCHY_DIR/lunchy-completion.zsh
 fi
+
+source ~/.iterm2_shell_integration.zsh
+
+RPROMPT='$(kube_ps1)'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
