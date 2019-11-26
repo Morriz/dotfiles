@@ -58,7 +58,7 @@ ZSH_THEME="robbyrussell"
 plugins=(brew bundler colorize
   dirhistory docker git git-extras git-flow github golang heroku
   kops kubectl kube-ps1 last-working-dir npm nvm osx python
-  rails rbenv ruby sbt tmux vagrant xcode)
+  rails rbenv ruby rvm sbt tmux vagrant xcode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,3 +103,12 @@ RPROMPT='$(kube_ps1)'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jehoszafatzimnowoda/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jehoszafatzimnowoda/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jehoszafatzimnowoda/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jehoszafatzimnowoda/google-cloud-sdk/completion.zsh.inc'; fi

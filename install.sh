@@ -23,12 +23,12 @@ ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
 # Package managers & packages
 
 . "$DOTFILES_DIR/install/brew.sh"
-. "$DOTFILES_DIR/install/bash.sh"
+# . "$DOTFILES_DIR/install/bash.sh"
 . "$DOTFILES_DIR/install/zsh.sh"
 #. "$DOTFILES_DIR/install/maximum-awesome.sh"
 . "$DOTFILES_DIR/install/node.sh"
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     . "$DOTFILES_DIR/install/brew-cask.sh"
     . "$DOTFILES_DIR/install/ruby.sh"
     ln -sfv "$DOTFILES_DIR/etc/mackup/.mackup.cfg" ~

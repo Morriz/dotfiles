@@ -1,20 +1,13 @@
 # Install Homebrew
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew untap homebrew/versions
-brew untap homebrew/dupes
-brew untap caskroom/cask
 # cleanup
 brew update
-brew cleanup --force -s && rm -rf "$(brew --cache)"
-# tap fresh
-brew tap homebrew/versions
-brew tap homebrew/dupes
-brew tap caskroom/cask
-
+brew cleanup -s && rm -rf "$(brew --cache)"
 brew upgrade
 
 # Install packages
+brew install ruby
 
 apps=(
     bash-completion2
@@ -40,12 +33,13 @@ apps=(
     legit
     mackup
     ngrok
+    openssl
     peco
     psgrep
-    ruby
     shellcheck
     ssh-copy-id
     #svn
+    tmux
     tree
     vim
     # wget

@@ -12,13 +12,11 @@ apps=(
     atom
     dash
     dropbox
-    firefox
-    firefox-nightly
     # glimmerblocker
     github-desktop
     google-chrome
-    google-chrome-canary
     google-drive
+    iterm
     kaleidoscope
     keycue
     macdown
@@ -26,7 +24,6 @@ apps=(
     screenflow
     shortcat
     slack
-    sourcetree
     spectacle
     spotify
     transmit
