@@ -20,6 +20,7 @@ prepend-path "$ANDROID_SDK_ROOT/platform-tools"
 prepend-path "$ANDROID_SDK_ROOT/tools"
 prepend-path "$ANDROID_SDK_ROOT/emulator"
 prepend-path "$HOME/.fastlane/bin"
+prepend-path "/usr/local/opt/openssl@1.1/bin"
 
 # Remove duplicates (preserving prepended items)
 # Source: http://unix.stackexchange.com/a/40755
